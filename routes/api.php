@@ -25,6 +25,7 @@ Route::namespace('Api')->group(function() {
     Route::get('brand/{id}', 'BrandController@show');
 
     Route::get('product', 'ProductController@index');
-    Route::get('product/{id}', 'ProductController@show');
+    Route::get('product/{id}', 'ProductController@show')->where('id', '[0-9]+');
+    Route::get('product/search', 'ProductController@search');
 
 });
