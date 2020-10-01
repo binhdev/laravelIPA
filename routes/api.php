@@ -23,10 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function() {
     Route::get('brand', 'BrandController@index');
     Route::get('brand/{id}', 'BrandController@show')->where('id', '[0-9]+');
-    Route::get('brand/{id}/search', 'BrandController@search');
+    Route::get('brand/{id}/search', 'BrandController@search')->where('id', '[0-9]+');
 
     Route::get('product', 'ProductController@index');
     Route::get('product/{id}', 'ProductController@show')->where('id', '[0-9]+');
-    Route::get('product/search', 'ProductController@search')->where('id', '[0-9]+');
+    Route::get('product/search', 'ProductController@search');
 
 });
